@@ -1,7 +1,7 @@
 Config {
-    font = "xft:DejaVu Sans Mono:pixelsize=12"
-    , bgColor = "black"
-    , fgColor = "grey"
+    font = "xft:Dejavu Sans Mono:pixelsize=12"
+    , fgColor = "#D7D0C7"
+    , bgColor = "#151515"
     , position = Top
     , lowerOnStart = True
     , commands = [ Run Weather "EGPF" ["-t","<station>: <tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
@@ -19,11 +19,11 @@ Config {
         , Run Memory ["-t","[MEM <usedratio>%]"] 10
         , Run Swap [] 10
         , Run Com "uname" ["-s","-r"] "" 36000
-        , Run Date "%H:%M" "date" 600
+        , Run Date "%H:%M (%b %d)" "date" 600
         , Run StdinReader
     ]
     , sepChar = "%"
     , alignSep = "$$"
-    , template = "%StdinReader% $$ %cpu% %memory% %eth0% %date%"
+    , template = "%StdinReader% $$ %memory% %eth0% %date%"
 }
 
